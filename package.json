@@ -1,0 +1,29 @@
+{
+  "name": "attendance-register",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Stencil App Starter",
+  "license": "MIT",
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "dependencies": {
+    "@material/button": "^2.0.0",
+    "@stencil/core": "0.18.1",
+    "@stencil/router": "0.3.3"
+  },
+  "devDependencies": {
+    "@stencil/sass": "^0.2.1",
+    "@types/jest": "23.3.14",
+    "@types/puppeteer": "1.11.1",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "puppeteer": "1.11.0"
+  },
+  "jest": {
+    "preset": "@stencil/core/testing"
+  }
+}

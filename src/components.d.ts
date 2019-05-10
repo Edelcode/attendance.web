@@ -14,15 +14,20 @@ export namespace Components {
 
   interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
+
+  interface EmployeesPage {}
+  interface EmployeesPageAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
     'AppRoot': Components.AppRoot;
+    'EmployeesPage': Components.EmployeesPage;
   }
 
   interface StencilIntrinsicElements {
     'app-root': Components.AppRootAttributes;
+    'employees-page': Components.EmployeesPageAttributes;
   }
 
 
@@ -32,12 +37,20 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
+  interface HTMLEmployeesPageElement extends Components.EmployeesPage, HTMLStencilElement {}
+  var HTMLEmployeesPageElement: {
+    prototype: HTMLEmployeesPageElement;
+    new (): HTMLEmployeesPageElement;
+  };
+
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement
+    'employees-page': HTMLEmployeesPageElement
   }
 
   interface ElementTagNameMap {
     'app-root': HTMLAppRootElement;
+    'employees-page': HTMLEmployeesPageElement;
   }
 
 

@@ -1,4 +1,4 @@
 
 export interface ICommand<TInput, TOutput> {
-    execute(TInput):TOutput;
+    execute(input: TInput): TOutput;
 }

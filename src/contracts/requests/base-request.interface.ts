@@ -1,4 +1,4 @@
-export class BaseRequest {
+export interface IBaseRequest {
     Page: number;
     PageSize: number;
 }

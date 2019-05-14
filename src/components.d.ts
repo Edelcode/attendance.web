@@ -12,6 +12,9 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface GridCalendarComponent {}
+  interface GridCalendarComponentAttributes extends StencilHTMLAttributes {}
+
   interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
 
@@ -21,15 +24,23 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'GridCalendarComponent': Components.GridCalendarComponent;
     'AppRoot': Components.AppRoot;
     'EmployeesPage': Components.EmployeesPage;
   }
 
   interface StencilIntrinsicElements {
+    'grid-calendar-component': Components.GridCalendarComponentAttributes;
     'app-root': Components.AppRootAttributes;
     'employees-page': Components.EmployeesPageAttributes;
   }
 
+
+  interface HTMLGridCalendarComponentElement extends Components.GridCalendarComponent, HTMLStencilElement {}
+  var HTMLGridCalendarComponentElement: {
+    prototype: HTMLGridCalendarComponentElement;
+    new (): HTMLGridCalendarComponentElement;
+  };
 
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
@@ -44,11 +55,13 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'grid-calendar-component': HTMLGridCalendarComponentElement
     'app-root': HTMLAppRootElement
     'employees-page': HTMLEmployeesPageElement
   }
 
   interface ElementTagNameMap {
+    'grid-calendar-component': HTMLGridCalendarComponentElement;
     'app-root': HTMLAppRootElement;
     'employees-page': HTMLEmployeesPageElement;
   }

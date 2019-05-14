@@ -1,7 +1,7 @@
-import { BaseRequest } from "../data/requests";
+import { IBaseRequest } from "../contracts/requests";
 import { HttpClient } from './../utilities';
 
-export class BaseRepository<T1 extends BaseRequest, T2>{
+export class BaseRepository<T1 extends IBaseRequest, T2>{
     public async find(request: T1): Promise<T2[]> {
         try {
             return await HttpClient.find<T1, T2[]>(request);

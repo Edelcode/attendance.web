@@ -14,7 +14,8 @@
     "@material/button": "^2.0.0",
     "@material/textfield": "^2.1.0",
     "@stencil/core": "0.18.1",
-    "@stencil/router": "0.3.3"
+    "@stencil/router": "0.3.3",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "@stencil/sass": "^0.2.1",

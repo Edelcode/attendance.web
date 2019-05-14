@@ -1,6 +1,6 @@
-import { BaseRequest } from './../../data/requests';
+import { IBaseRequest } from '../../contracts/requests';
 class HttpClientController {
-    public async find<TInput extends BaseRequest, TOutput>(request: TInput): Promise<TOutput> {
+    public async find<TInput extends IBaseRequest, TOutput>(request: TInput): Promise<TOutput> {
         var url = ' ';
 
         return fetch(url, {

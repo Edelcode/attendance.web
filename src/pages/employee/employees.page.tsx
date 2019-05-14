@@ -1,18 +1,32 @@
-import { Component } from "@stencil/core";
+import { Component, State } from '@stencil/core';
 
 @Component({
-  tag: "employees-page",
-  styleUrl: "employees.page.scss"
+    tag: 'employees-page',
+    styleUrl: 'employees.page.scss',
 })
 export class EmployeesPage {
+    @State() date: number;
+    public days = new Array();
 
+    constructor() {
+    }
 
-  render() {
-    return (
-      <div>
-        <div class=""></div>
-        <div class="mdc-text-field-character-counter">0 / 140</div>
-      </div>
-    );
-  }
+    render() {
+
+        return (
+            <div class="page">
+                <div class="nav-bar">
+                    <ul>
+                        <li>
+                            <a href="#home">Users</a>
+                        </li>
+                        <li>
+                            <a href="#news">Holidays</a>
+                        </li>
+                    </ul>
+                </div>
+               <grid-calendar-component ></grid-calendar-component>
+            </div>
+        );
+    }
 }

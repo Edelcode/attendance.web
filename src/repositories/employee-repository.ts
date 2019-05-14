@@ -1,8 +1,7 @@
-import { EmployeeModel } from "../data/models/employee.model";
-import { IEmployeeRepository } from "../contracts/repositories/employee-repository.interface";
-import { BaseRequest } from "../data/requests";
+import { IUser } from "../contracts/models";
+import { IBaseRequest } from "../contracts/requests";
 import { BaseRepository } from './base.repository';
 
-class EmployeeRepositoryController extends BaseRepository<BaseRequest, EmployeeModel> implements IEmployeeRepository { }
+class EmployeeRepositoryController extends BaseRepository<IBaseRequest, IUser> { }
 
 export const EmployeeRepository = new EmployeeRepositoryController();

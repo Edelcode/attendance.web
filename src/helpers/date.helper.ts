@@ -1,9 +1,8 @@
 import moment from 'moment';
 
 export class DateHelper{
-    public static getDaysOfMonth(year:string, month:string) {
+    public static getDaysOfMonth(monthAndYear:string) {
         let days = new Array();
-        let monthAndYear = year + '-' + month;
         
         var firstDayOfMonth = moment(monthAndYear).startOf('month');
         var lastDayOfMonth= moment(monthAndYear).endOf('month');
@@ -15,5 +14,18 @@ export class DateHelper{
             days.push(startDate.clone());
         }
         return days;
+    }
+
+    public static getYears(startDate:string, endDate:string){
+        var years =new Array();
+
+        var start = new Date( startDate);
+        var first = start.getFullYear();
+    
+        var end = new Date( endDate);
+        var second = end.getFullYear();
+    
+       for(var i = first; i <= second; i++) years.push(i).toString();
+       return years;
     }
 }

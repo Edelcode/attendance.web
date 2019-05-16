@@ -12,34 +12,52 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface GridCalendarComponent {}
-  interface GridCalendarComponentAttributes extends StencilHTMLAttributes {}
+  interface GridCalendar {}
+  interface GridCalendarAttributes extends StencilHTMLAttributes {}
+
+  interface SelectMenu {
+    'model': any[];
+    'selectedValue': string;
+  }
+  interface SelectMenuAttributes extends StencilHTMLAttributes {
+    'model'?: any[];
+    'onSelectedChange'?: (event: CustomEvent<string>) => void;
+    'selectedValue'?: string;
+  }
 
   interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
 
-  interface EmployeesPage {}
-  interface EmployeesPageAttributes extends StencilHTMLAttributes {}
+  interface HolidaysPage {}
+  interface HolidaysPageAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'GridCalendarComponent': Components.GridCalendarComponent;
+    'GridCalendar': Components.GridCalendar;
+    'SelectMenu': Components.SelectMenu;
     'AppRoot': Components.AppRoot;
-    'EmployeesPage': Components.EmployeesPage;
+    'HolidaysPage': Components.HolidaysPage;
   }
 
   interface StencilIntrinsicElements {
-    'grid-calendar-component': Components.GridCalendarComponentAttributes;
+    'grid-calendar': Components.GridCalendarAttributes;
+    'select-menu': Components.SelectMenuAttributes;
     'app-root': Components.AppRootAttributes;
-    'employees-page': Components.EmployeesPageAttributes;
+    'holidays-page': Components.HolidaysPageAttributes;
   }
 
 
-  interface HTMLGridCalendarComponentElement extends Components.GridCalendarComponent, HTMLStencilElement {}
-  var HTMLGridCalendarComponentElement: {
-    prototype: HTMLGridCalendarComponentElement;
-    new (): HTMLGridCalendarComponentElement;
+  interface HTMLGridCalendarElement extends Components.GridCalendar, HTMLStencilElement {}
+  var HTMLGridCalendarElement: {
+    prototype: HTMLGridCalendarElement;
+    new (): HTMLGridCalendarElement;
+  };
+
+  interface HTMLSelectMenuElement extends Components.SelectMenu, HTMLStencilElement {}
+  var HTMLSelectMenuElement: {
+    prototype: HTMLSelectMenuElement;
+    new (): HTMLSelectMenuElement;
   };
 
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
@@ -48,22 +66,24 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
-  interface HTMLEmployeesPageElement extends Components.EmployeesPage, HTMLStencilElement {}
-  var HTMLEmployeesPageElement: {
-    prototype: HTMLEmployeesPageElement;
-    new (): HTMLEmployeesPageElement;
+  interface HTMLHolidaysPageElement extends Components.HolidaysPage, HTMLStencilElement {}
+  var HTMLHolidaysPageElement: {
+    prototype: HTMLHolidaysPageElement;
+    new (): HTMLHolidaysPageElement;
   };
 
   interface HTMLElementTagNameMap {
-    'grid-calendar-component': HTMLGridCalendarComponentElement
+    'grid-calendar': HTMLGridCalendarElement
+    'select-menu': HTMLSelectMenuElement
     'app-root': HTMLAppRootElement
-    'employees-page': HTMLEmployeesPageElement
+    'holidays-page': HTMLHolidaysPageElement
   }
 
   interface ElementTagNameMap {
-    'grid-calendar-component': HTMLGridCalendarComponentElement;
+    'grid-calendar': HTMLGridCalendarElement;
+    'select-menu': HTMLSelectMenuElement;
     'app-root': HTMLAppRootElement;
-    'employees-page': HTMLEmployeesPageElement;
+    'holidays-page': HTMLHolidaysPageElement;
   }
 
 

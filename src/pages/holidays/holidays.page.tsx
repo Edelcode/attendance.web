@@ -1,10 +1,10 @@
 import { Component, State } from '@stencil/core';
 
 @Component({
-    tag: 'employees-page',
-    styleUrl: 'employees.page.scss',
+    tag: 'holidays-page',
+    styleUrl: 'holidays.page.scss',
 })
-export class EmployeesPage {
+export class HolidaysPage {
     @State() date: number;
     public days = new Array();
 
@@ -25,7 +25,7 @@ export class EmployeesPage {
                         </li>
                     </ul>
                 </div>
-               <grid-calendar-component ></grid-calendar-component>
+               <grid-calendar ></grid-calendar>
             </div>
         );
     }

@@ -5,7 +5,6 @@ import { sass } from "@stencil/sass";
 
 export const config: Config = {
   globalStyle: "src/global/app.scss",
-  globalScript: "src/global/app.ts",
   outputTargets: [
     {
       type: "www"
@@ -15,6 +14,7 @@ export const config: Config = {
   ],
   plugins: [
     sass({
+      injectGlobalPaths: ["src/global/_common.scss"],
       includePaths: ["./node_modules"]
     })
   ]
